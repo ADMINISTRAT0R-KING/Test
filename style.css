@@ -1,0 +1,140 @@
+  .div_main_body{
+    display: none;
+  }
+  .div_offline_body,.div_login_body{
+    display: block;
+  }
+*{
+    margin: 0vw;
+    box-sizing: border-box;
+    font-family: fantasy;
+    -webkit-user-select: none;
+    overflow:hidden;color: var(--txt);
+    transition: all ease 0.2s;
+  }
+  :root{
+    --txt: #FFF;
+    --bg1: #00000033;
+    --bg2: #00000075;
+  }
+  body,html{
+    width: 100vw;height: 100vh;
+    margin: 0vw;z-index: 1;
+    scroll-behavior: smooth;
+  }
+  html{
+    background: linear-gradient(135deg,#FF0000,#FF00FF,#0000FF);
+  }
+  body{
+    background: var(--bg2);
+  }
+  .div_offline_body,.div_login_body,.div_setting_body,.div_user_info_body,.div_create_body{
+    width: 92vw;height: 95vh;
+    z-index: 10;margin: 4%;
+    border-radius: 5vw;
+    background: var(--bg1);
+    box-shadow: 0 0 100vw #000;
+    text-align: center;
+    font-weight: bold;
+    color: var(--txt);
+    border: 0.001vw solid #000;
+  }
+  .btn_refresh:active{
+    scale: 0.95;
+  }
+  .btn_refresh{
+    width: 50%;height: 7%;
+    background: var(--bg1);
+    border: none;border-radius: 4vw;
+    font-size: 120%;
+    font-weight: bold;
+  }
+  .div_login_body{
+    z-index: 9;
+  }
+  input::placeholder{
+    color: #AAAAAA;
+  }
+  .inp_name,.inp_email,.inp_pass,.inp_submit,.inp_room_seach,.inp_msg{
+    width: 75%;height: 14vw;
+    margin: 3vw;background: var(--bg1);border: none;outline: none;
+    color: var(--txt);
+    border-radius: 4vw;padding: 0 5vw;
+    box-shadow: 0 0 1vw #151515;
+    font-size: 120%;font-weight: bold;
+    text-align: center;
+  }
+  .div_main_body{
+    width: 100%;height: 100vh;
+    position: fixed;top: 0vw;
+    z-index: 2;
+  }
+  .div_topbar,.bottombar{
+    width: 94%;height: 16vw;
+    background: var(--bg1);
+    position: fixed;
+    left: 3vw;border-radius: 4vw;
+  }
+  .div_topbar{top: 2vw;}
+  .bottombar{bottom: 2vw;}
+  .inp_room_seach,.inp_msg{
+    box-shadow: none;height: 12vw;
+    text-align: left;
+    margin-top: 2vw;
+  }
+  .btn_menu:active,.btn_send_msg:active{
+    scale: 0.94;
+  }
+  .btn_menu,.btn_setting,.btn_user_info,.btn_home,.btn_send_msg{
+    background: var(--bg1);
+    height: 12vw;position: absolute;
+    width: 16vw;right: 3vw;
+    border: none;border-radius: 4vw;
+    top: 2vw;font-size: 100%;
+    text-align: center;
+    color: var(--txt);
+    font-weight: bold;
+  }
+  .top_menu{
+    display: none;
+    width: 20vw;height: 48vw;
+    position: fixed;
+    right: 3.5vw;top: 19vw;
+    background: var(--bg1);
+    border-radius: 4vw;
+    z-index: 8;
+  }
+  .btn_home{right: 2vw;}
+  .btn_setting,.btn_user_info{
+    right: 2vw;top: 16vw;
+  }
+  .btn_setting{top: 32vw;}
+  .div_chat_room_body{
+    width: 100vw;height: 90%;
+    position: fixed;top: 10%;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .div_setting_body,.div_user_info_body,.div_create_body{
+    margin-top: 20vw;display: none;
+    height: 85vh;
+    box-shadow: 0 0 6vw #000;
+  }
+  .div_chat_room_body{
+    height: 80%;z-index: 1;
+  }
+  .chats{
+    width: 100%;height: 100%;
+    overflow-y: scroll;
+  }
+  .inc_msg,.out_msg{
+    width: min-content;height: auto;
+    width: 88vw;border-radius: 5vw;
+    background: var(--bg1);padding: 2vw;border-top-left-radius: 0vw;
+    margin: 3vw;margin-top: 2vw;
+    position: relative;
+  }
+  .out_msg{left: 6vw;
+    border-radius: 5vw;
+    border-bottom-right-radius: 0vw;
+  }

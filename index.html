@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta content="user-scalable=off">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+  <script>module={}</script>
+  <script type="module" src="main2.js"></script>
+  <title>Document</title>
+</head>
+<body>
+<div style="display: none;">
+<svg id="svg_offline" width="70vw" height="70vw" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.96973 5.03039L18.9697 20.0304L20.0304 18.9697L5.03039 3.96973L3.96973 5.03039ZM2.92454 9.67478C3.71079 8.88852 4.57369 8.2256 5.48917 7.68602L6.58987 8.78672C5.86769 9.17925 5.17917 9.65606 4.53875 10.2172L11.9999 17.5283L13.6826 15.8795L14.7433 16.9402L11.9999 19.6284L2.38879 10.2105L2.92454 9.67478ZM19.4611 10.2172L15.8255 13.7797L16.8862 14.8404L21.611 10.2105L21.0753 9.67478C17.6588 6.25827 12.7953 5.17059 8.45752 6.41173L9.69662 7.65083C13.0757 6.95288 16.7117 7.80832 19.4611 10.2172Z" fill="#FF0000"/></svg>
+<svg id="svg_menu" width="50" height="50" viewBox="0 0 24 24" fill="none">
+<path d="M4 12H20M4 8H20M4 16H12" stroke="var(--txt)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<svg id="svg_user" width="50" height="50" viewBox="0 0 24 24" fill="none"><path d="M4 21C4 17.134 7.13401 14 11 14C11.3395 14 11.6734 14.0242 12 14.0709M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7ZM12.5898 21L14.6148 20.595C14.7914 20.5597 14.8797 20.542 14.962 20.5097C15.0351 20.4811 15.1045 20.4439 15.1689 20.399C15.2414 20.3484 15.3051 20.2848 15.4324 20.1574L19.5898 16C20.1421 15.4477 20.1421 14.5523 19.5898 14C19.0376 13.4477 18.1421 13.4477 17.5898 14L13.4324 18.1574C13.3051 18.2848 13.2414 18.3484 13.1908 18.421C13.1459 18.4853 13.1088 18.5548 13.0801 18.6279C13.0478 18.7102 13.0302 18.7985 12.9948 18.975L12.5898 21Z" stroke="var(--txt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<svg id="svg_setting" width="50" height="40" viewBox="0 0 24 24" fill="none"><path d="M20.1 9.2214C18.29 9.2214 17.55 7.9414 18.45 6.3714C18.97 5.4614 18.66 4.3014 17.75 3.7814L16.02 2.7914C15.23 2.3214 14.21 2.6014 13.74 3.3914L13.63 3.5814C12.73 5.1514 11.25 5.1514 10.34 3.5814L10.23 3.3914C9.78 2.6014 8.76 2.3214 7.97 2.7914L6.24 3.7814C5.33 4.3014 5.02 5.4714 5.54 6.3814C6.45 7.9414 5.71 9.2214 3.9 9.2214C2.86 9.2214 2 10.0714 2 11.1214V12.8814C2 13.9214 2.85 14.7814 3.9 14.7814C5.71 14.7814 6.45 16.0614 5.54 17.6314C5.02 18.5414 5.33 19.7014 6.24 20.2214L7.97 21.2114C8.76 21.6814 9.78 21.4014 10.25 20.6114L10.36 20.4214C11.26 18.8514 12.74 18.8514 13.65 20.4214L13.76 20.6114C14.23 21.4014 15.25 21.6814 16.04 21.2114L17.77 20.2214C18.68 19.7014 18.99 18.5314 18.47 17.6314C17.56 16.0614 18.3 14.7814 20.11 14.7814C21.15 14.7814 22.01 13.9314 22.01 12.8814V11.1214C22 10.0814 21.15 9.2214 20.1 9.2214ZM12 15.2514C10.21 15.2514 8.75 13.7914 8.75 12.0014C8.75 10.2114 10.21 8.7514 12 8.7514C13.79 8.7514 15.25 10.2114 15.25 12.0014C15.25 13.7914 13.79 15.2514 12 15.2514Z" fill="var(--txt)"/>
+</svg>
+<svg id="svg_home" fill="none" width="50" height="36" viewBox="0 0 32 32"><path d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z" fill="var(--txt)"></path>
+</svg>
+<svg id="svg_send" width="50" height="50" viewBox="0 0 24 24" fill="none">
+<path d="M10 14L12.2728 19.3032C12.5856 20.0331 13.5586 20.1103 13.9486 19.4185C14.7183 18.0535 15.8591 15.8522 17 13C19 8 20 4 20 4C20 4 16 5 11 7C8.14784 8.14086 5.94647 9.28173 4.58149 10.0514C3.88975 10.4414 3.96687 11.4144 4.69678 11.7272L10 14Z" stroke="var(--txt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+  <div class="div_offline_body">
+    <svg height="70vw" width="100vw"><use x="14vw" xlink:href="#svg_offline">
+    </use></svg><br>
+    <h2>NO INTERNET</h2><br><br>
+    <button class="btn_refresh" onclick="window.location.reload()">REFRESH</button><br><br><br><br><br><br><br>
+    <h3>TERMS OF SERVICE'S</h3><br>
+    <h4>NO INTERNET<br>CONNECTION PLEASE CHECK YOUR INTERNET CONNECTION AND TRY AGAIN LATER</h4>
+  </div>
+  <div class="div_login_body"><br>
+    <h2>LOG IN</h2><br><form id="log_in_form">
+    <input class="inp_name" required maxlength="10" pattern=".{4,}" placeholder="Enter Name">
+    <input class="inp_email" type="email" required pattern=".{5,}" maxlength="50" placeholder="Enter Email">
+    <input class="inp_pass" required pattern=".{8,}" maxlength="15" placeholder="Enter Password"><br><input class="inp_submit" type="submit"><br><br>
+    (•‿•)<br><br>Powerd by: KSSR<br>
+    Created by: MR.KRUSHNA GHUGE<br>
+    </form>
+  </div>
+  <div class="div_main_body">
+    <div class="div_topbar">
+      <input type="search" class="inp_room_seach" disabled>
+      <button class="btn_menu">
+        <svg><use y="-3" xlink:href="#svg_menu"></use></svg>
+      </button>
+    </div>
+    <div class="top_menu">
+      <button class="btn_home" onclick="window.location.reload()">
+        <svg><use xlink:href="#svg_home"></use></svg>
+      </button>
+      <button class="btn_user_info">
+        <svg><use xlink:href="#svg_user"></use></svg>
+      </button>
+      <button class="btn_setting">
+        <svg><use y="2" xlink:href="#svg_setting"></use></svg>
+      </button>
+    </div>
+    <div class="div_user_info_body">
+      <br><h1>USER</h1>
+    </div>
+    <div class="div_setting_body">
+      <br><h1>SETTING</h1>
+    </div>
+    <div class="div_create_body">
+      <br><h1>Create</h1><br>hi
+    </div>
+    <div class="div_chat_room_body">
+      <div class="chats">
+        
+      </div>
+      <div class="bottombar"><form id="massage" onsubmit="return false;">
+        <input class="inp_msg" required placeholder="Enter Massage...">
+        <button class="btn_send_msg">
+          <svg><use xlink:href="#svg_send"></use></svg>
+        </button></form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

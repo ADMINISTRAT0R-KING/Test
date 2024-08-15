@@ -1,6 +1,6 @@
 // IMPORTS ALL FUNCTIONS FROM FIREBASE
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-  import { getDatabase, ref, set, get, child, update, remove, onChildAdded, onChildRemoved, onChildChanged, push } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+  
   import { getAuth, signInWithPhoneNumber, RecaptchaVerifier, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged , signOut } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
   
 // FIREBASE CONFIGURATION
@@ -17,7 +17,7 @@
 
 // INITIALIZE FIREBASE
   const app = initializeApp(firebaseConfig);
-  const Database = getDatabase(app);
+  
   const Auth = getAuth(app);
   Auth.useDeviceLanguage();
   const CurrentUser = Auth.currentUser;
@@ -55,45 +55,3 @@
       grecaptcha.reset(window.recaptchaWidgetId);
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-  
-  set(ref(Database,Id),Value);
-  get(ref(Database,Id)).then((Snapshot)=>{});
-  remove(ref(Database,Id));
-  update(ref(Database,Id),Value);
-  
-  Value=Snapshot.val();
-  Key=Snapshot.key;
-  if=Snapshot.exist();
-  
-  
-  onChildAdded(ref(Database),(Snapshot)=>{
-    console.log('Added',Snapshot.key+': '+Snapshot.val());
-  })
-  
-  onChildRemoved(ref(Database),(Snapshot)=>{
-    console.error('Removed',Snapshot.key+': '+Snapshot.val());
-  })
-  
-  onChildChanged(ref(Database),(Snapshot)=>{
-    console.warn('Updataed',Snapshot.key+': '+Snapshot.val());
-  })
-  
-*/

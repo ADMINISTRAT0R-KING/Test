@@ -1,0 +1,67 @@
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=off,maximum-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" sizes="2048x2048" href="/0.png">
+  <button id="btn_create"><h1>CREATE NEW BIOMATERIC KEY FOR LOGIN</h1></button><br>
+  <button id="btn_get"><h1>GET BIOMATERIC KEY To CONFIRM YOUR IDENTITY</h1></button>
+  <script>
+    btn_create.onclick=()=>{
+      window.CurrentPasskey=navigator.credentials.create({
+        publicKey: {
+          challenge: new Uint8Array(0),
+          rp: {
+            //id: window.location.hostname,
+            name: "rpname"
+          },
+          user: {
+            id: new Uint8Array(0),
+            displayName: "ADMINISTRATOR",
+            name: "Krushna Santosh Ghuge"
+          },
+          pubKeyCredParams: [{
+            type: "public-key",
+            alg: -7
+          },{
+            type: "public-key",
+            alg: -8
+          },{
+            type: "public-key",
+            alg: -257
+          }],
+          timeout: 60000,
+          authenticatorSelection: {
+            residentKey: "preferred",
+            requireResidentKey: true,
+            userVerification: "preferred",
+            authenticatorAttachment: "multi-platform",
+          },
+          attestation: "none",
+          extensions: {
+            credProps: true
+          }
+        }
+      }).then((credential)=>{
+        localStorage.setItem('PassKeyId',new Uint8Array(credential.rawId).toString())
+        confirm('BIOMATERIC CREATED:- \n\n'+localStorage.getItem('PassKeyId'));
+      }).catch((err)=>{
+        confirm(err.message);
+      });
+    }
+    
+    btn_get.onclick=()=>{
+      navigator.credentials.get({
+        publicKey: {
+          challenge: new Uint8Array(0),
+          //rpId: window.location.hostname,
+          allowCredentials: [{
+            type: "public-key",
+            id: new Uint8Array(localStorage.getItem('PassKeyId').split(','))
+          }],
+          userVerification: "preferred"
+        }
+      }).then((credential)=>{
+        confirm('BIOMATERIC VERIFICATION SUCCESSFUL:- \n\n'+new Uint8Array(credential.response.authenticatorData).toString());
+      }).catch((err)=>{
+        confirm(err.message);
+      });
+    }
+  </script>
+  
